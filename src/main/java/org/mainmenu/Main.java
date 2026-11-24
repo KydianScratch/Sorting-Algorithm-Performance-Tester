@@ -1,12 +1,13 @@
 package org.mainmenu;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class Main {
     static void main() {
+        System.out.println("Welcome to the Sorting Algorithm Comparator!");
         while (true) {
-            System.out.println("Welcome to the Sorting Algorithm Comparator!");
-            System.out.println("Pick a number from 1 to 6 to perform the corresponding algorithm, or choose 0 to quit:");
+            System.out.println("\n\nPick a number from 1 to 6 to perform the corresponding algorithm, or choose 0 to quit:");
             System.out.println("1. Bubble Sort.");
             System.out.println("2. Selection Sort.");
             System.out.println("3. Insertion Sort.");
@@ -26,10 +27,7 @@ public class Main {
                 }
                 catch (InputMismatchException e) {
                     System.out.println("Invalid entry! Enter a number value between 0 and 6.\n");
-                    throw new RuntimeException(e);
-                }
-                finally {
-                    scanner.close();
+                    continue;
                 }
                 if (entry < 0 || entry > 6) {
                     System.out.println("Invalid entry! Enter a number value between 0 and 6.\n");
@@ -41,52 +39,44 @@ public class Main {
                 return;
             }
 
-            boolean done = false;
-            int i = 1;
-            List<String> numbersAL = new ArrayList<>();
-            int element = 0;
+            pass = false;
+            int arraySize = 0;
 
-            while (!done) {
+            while (!pass) {
                 Scanner scanner = new Scanner(System.in);
-                System.out.printf("Enter the array element number %d or enter x to finish: ", i);
-                String entry2 = scanner.nextLine();
-
-                if (entry2.toLowerCase() == "x") {
-                    done = true;
+                System.out.print("Enter the size of the desired array size: ");
+                try {
+                    arraySize = scanner.nextInt();
                 }
-                else {
-                    try {
-                        element = Integer.parseInt(entry2);
-                    }
-                    catch (Exception e) {
-                        System.out.println("Only enter integer values or x for finishing.");
-                        continue;
-                    }
+                catch (InputMismatchException e) {
+                    System.out.println("Invalid entry, enter a valid integer value!\n");
+                    continue;
                 }
-                numbersAL.add(entry2);
-                i++;
+                pass = true;
             }
 
-            int[] numbers = new int[numbersAL.size()];
-            for (int j=0; j<numbersAL.size(); j++) {
-                numbers[j] = Integer.parseInt(numbersAL.get(j));
-            }
+            int[]  numbers = IntStream.generate(() -> new Random().nextInt(1000)).limit(arraySize).toArray();
 
             switch (entry) {
                 case 1:
                     bubbleSort(numbers);
+                    break;
 
                 case 2:
                     selectionSort(numbers);
+                    break;
 
                 case 3:
                     insertionSort(numbers);
+                    break;
 
                 case 4:
                     mergeSort(numbers);
+                    break;
 
                 case 5:
                     quickSort(numbers, 0, numbers.length - 1);
+                    break;
             }
         }
     }
