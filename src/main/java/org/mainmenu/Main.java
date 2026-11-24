@@ -42,6 +42,12 @@ public class Main {
             pass = false;
             int arraySize = 0;
 
+            if (entry == 6) {
+                pass = true;
+                arraySize = 10000;
+                System.out.println("Preparing for the comparison of all algorithms..\n");
+            }
+
             while (!pass) {
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Enter the size of the desired array size: ");
@@ -77,11 +83,41 @@ public class Main {
                 case 5:
                     quickSort(numbers, 0, numbers.length - 1);
                     break;
+
+                case 6:
+                    long[] results1 = bubbleSort(numbers);
+                    long time1 = results1[0];
+                    long space1 = results1[1];
+
+                    long[] results2 = bubbleSort(numbers);
+                    long time2 = results2[0];
+                    long space2 = results2[1];
+
+                    long[] results3 = bubbleSort(numbers);
+                    long time3 = results3[0];
+                    long space3 = results3[1];
+
+                    long[] results4 = bubbleSort(numbers);
+                    long time4 = results4[0];
+                    long space4 = results4[1];
+
+                    long[] results5 = bubbleSort(numbers);
+                    long time5 = results5[0];
+                    long space5 = results5[1];
+
+
+
+                    System.out.println("   Algorithm   - Array Size - Time (micro s) -  Memort (KB)  ");
+                    System.out.printf("  Bubble Sort  -   10 000   -       %d       -    %d    \n", time1, space1);
+                    System.out.printf("Selection Sort -   10 000   -       %d       -    %d    \n", time2, space2);
+                    System.out.printf("Insertion Sort -   10 000   -       %d       -    %d    \n", time3, space3);
+                    System.out.printf("  Merge Sort   -   10 000   -       %d       -    %d    \n", time4, space4);
+                    System.out.printf("  Quick Sort   -   10 000   -       %d       -    %d    \n", time5, space5);
             }
         }
     }
 
-    static void bubbleSort(int[] numbers) {
+    static long[] bubbleSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
         System.out.println("Applying Bubble Sort on the given array..");
@@ -106,7 +142,7 @@ public class Main {
             }
 
             long endTime = System.nanoTime();
-            long cpuTime = (endTime - startTime) / 10 ^ 9;
+            long cpuTime = (endTime - startTime) / 1000;
             long space = startSpace.totalMemory() / 1024;
 
             timeSamples[iter] = cpuTime;
@@ -129,10 +165,12 @@ public class Main {
         System.out.print("The sorted array: ");
         System.out.println(Arrays.toString(numbers));
         System.out.printf("CPU time: %d s.\n", realCpuTime);
-        System.out.printf("Total memory usage: %d KB.\n", realSpace);
+        System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
+
+        return new long[]{realCpuTime, realSpace};
     }
 
-    static void selectionSort(int[] numbers) {
+    static long[] selectionSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
         System.out.println("Applying Bubble Sort on the given array..");
@@ -155,7 +193,7 @@ public class Main {
             }
 
             long endTime = System.nanoTime();
-            long cpuTime = (endTime - startTime) / 10 ^ 9;
+            long cpuTime = (endTime - startTime) / 1000;
             long space = startSpace.totalMemory() / 1024;
 
             timeSamples[iter] = cpuTime;
@@ -178,10 +216,12 @@ public class Main {
         System.out.print("The sorted array: ");
         System.out.println(Arrays.toString(numbers));
         System.out.printf("CPU time: %d s.\n", realCpuTime);
-        System.out.printf("Total memory usage: %d KB.\n", realSpace);
+        System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
+
+        return new long[]{realCpuTime, realSpace};
     }
 
-    static void insertionSort(int[] numbers) {
+    static long[] insertionSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
         System.out.println("Applying Bubble Sort on the given array..");
@@ -201,7 +241,7 @@ public class Main {
             }
 
             long endTime = System.nanoTime();
-            long cpuTime = (endTime - startTime) / 10 ^ 9;
+            long cpuTime = (endTime - startTime) / 1000;
             long space = startSpace.totalMemory() / 1024;
 
             timeSamples[iter] = cpuTime;
@@ -224,10 +264,12 @@ public class Main {
         System.out.print("The sorted array: ");
         System.out.println(Arrays.toString(numbers));
         System.out.printf("CPU time: %d s.\n", realCpuTime);
-        System.out.printf("Total memory usage: %d KB.\n", realSpace);
+        System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
+
+        return new long[]{realCpuTime, realSpace};
     }
 
-    static void mergeSort(int[] numbers) {
+    static long[] mergeSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
         System.out.println("Applying Bubble Sort on the given array..");
@@ -239,7 +281,7 @@ public class Main {
             split(numbers);
 
             long endTime = System.nanoTime();
-            long cpuTime = (endTime - startTime) / 10 ^ 9;
+            long cpuTime = (endTime - startTime) / 1000;
             long space = startSpace.totalMemory() / 1024;
 
             timeSamples[iter] = cpuTime;
@@ -262,7 +304,9 @@ public class Main {
         System.out.print("The sorted array: ");
         System.out.println(Arrays.toString(numbers));
         System.out.printf("CPU time: %d s.\n", realCpuTime);
-        System.out.printf("Total memory usage: %d KB.\n", realSpace);
+        System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
+
+        return new long[]{realCpuTime, realSpace};
     }
 
     static int[] split(int[] numbers) {
@@ -308,7 +352,7 @@ public class Main {
         }
     }
 
-    static void quickSort(int[] numbers, int low, int high) {
+    static long[] quickSort(int[] numbers, int low, int high) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
         System.out.println("Applying Bubble Sort on the given array..");
@@ -321,7 +365,7 @@ public class Main {
             unite(numbers, low, high);
 
             long endTime = System.nanoTime();
-            long cpuTime = (endTime - startTime) / 10 ^ 9;
+            long cpuTime = (endTime - startTime) / 1000;
             long space = startSpace.totalMemory() / 1024;
 
             timeSamples[iter] = cpuTime;
@@ -344,7 +388,9 @@ public class Main {
         System.out.print("The sorted array: ");
         System.out.println(Arrays.toString(numbers));
         System.out.printf("CPU time: %d s.\n", realCpuTime);
-        System.out.printf("Total memory usage: %d KB.\n", realSpace);
+        System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
+
+        return new long[]{realCpuTime, realSpace};
     }
 
     static int[] unite(int numbers[], int low, int high) {
