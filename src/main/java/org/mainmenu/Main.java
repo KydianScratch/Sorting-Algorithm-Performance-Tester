@@ -120,7 +120,7 @@ public class Main {
     static long[] bubbleSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
-        System.out.println("Applying Bubble Sort on the given array..");
+        System.out.println("\nApplying Bubble Sort on the given array..");
 
         for (int iter=0; iter<5; iter++) {
             long startTime = System.nanoTime();
@@ -162,8 +162,9 @@ public class Main {
         }
         realSpace = total/5;
 
-        System.out.print("The sorted array: ");
-        System.out.println(Arrays.toString(numbers));
+        //System.out.print("The sorted array: ");
+        //System.out.println(Arrays.toString(numbers));
+        System.out.println("Sort successful.\n");
         System.out.printf("CPU time: %d s.\n", realCpuTime);
         System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
 
@@ -173,7 +174,7 @@ public class Main {
     static long[] selectionSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
-        System.out.println("Applying Bubble Sort on the given array..");
+        System.out.println("\nApplying Bubble Sort on the given array..");
 
         for (int iter=0; iter<5; iter++) {
             long startTime = System.nanoTime();
@@ -213,8 +214,9 @@ public class Main {
         }
         realSpace = total/5;
 
-        System.out.print("The sorted array: ");
-        System.out.println(Arrays.toString(numbers));
+        //System.out.print("The sorted array: ");
+        //System.out.println(Arrays.toString(numbers));
+        System.out.println("Sort successful.\n");
         System.out.printf("CPU time: %d s.\n", realCpuTime);
         System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
 
@@ -224,7 +226,7 @@ public class Main {
     static long[] insertionSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
-        System.out.println("Applying Bubble Sort on the given array..");
+        System.out.println("\nApplying Bubble Sort on the given array..");
 
         for (int iter=0; iter<5; iter++) {
             long startTime = System.nanoTime();
@@ -261,8 +263,9 @@ public class Main {
         }
         realSpace = total/5;
 
-        System.out.print("The sorted array: ");
-        System.out.println(Arrays.toString(numbers));
+        //System.out.print("The sorted array: ");
+        //System.out.println(Arrays.toString(numbers));
+        System.out.println("Sort successful.\n");
         System.out.printf("CPU time: %d s.\n", realCpuTime);
         System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
 
@@ -272,7 +275,7 @@ public class Main {
     static long[] mergeSort(int[] numbers) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
-        System.out.println("Applying Bubble Sort on the given array..");
+        System.out.println("\nApplying Bubble Sort on the given array..");
 
         for (int iter=0; iter<5; iter++) {
             long startTime = System.nanoTime();
@@ -301,8 +304,9 @@ public class Main {
         }
         realSpace = total/5;
 
-        System.out.print("The sorted array: ");
-        System.out.println(Arrays.toString(numbers));
+        //System.out.print("The sorted array: ");
+        //System.out.println(Arrays.toString(numbers));
+        System.out.println("Sort successful.\n");
         System.out.printf("CPU time: %d s.\n", realCpuTime);
         System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
 
@@ -355,7 +359,7 @@ public class Main {
     static long[] quickSort(int[] numbers, int low, int high) {
         long[] timeSamples = {0, 0, 0, 0, 0};
         long[] spaceSamples = {0, 0, 0, 0, 0};
-        System.out.println("Applying Bubble Sort on the given array..");
+        System.out.println("\nApplying Bubble Sort on the given array..");
 
 
         for (int iter=0; iter<5; iter++) {
@@ -385,8 +389,9 @@ public class Main {
         }
         realSpace = total/5;
 
-        System.out.print("The sorted array: ");
-        System.out.println(Arrays.toString(numbers));
+        //System.out.print("The sorted array: ");
+        //System.out.println(Arrays.toString(numbers));
+        System.out.println("Sort successful.\n");
         System.out.printf("CPU time: %d s.\n", realCpuTime);
         System.out.printf("Total memory usage: %d KB.\n\n\n", realSpace);
 

@@ -21,6 +21,14 @@ THIS PROJECT HAS BEEN DONE 100% WITH HUMAN HANDS.
 THERE WAS NOT THE SLIGHTEST USE OF ARTIFICIAL INTELIGENCE IN NEITHER CODING, LEARNING THE LANGUAGE AND ALGORITHMS, OR WRITING THE DOCUMENT.
 THIS PROJECT IS THE SAME RESULT THAT WOULD HAVE BEEN ACHIEVED BY THE AUTHOR IF AI WAS NEVER INVENTED.
 
+
+Compiling Instructions:
+
+Go to: /SortingAlgorithms/src/main
+Run: java org.mainmenu.Main
+And the program should run on your terminal.
+
+
 Algorithm Describtions:
 
 - Bubble Sort: a basic, but less efficient sorting method. Despite having similar time and space complexities to other algorithms, it has shown high resource consumption compared to the other algorithms in this test. Better used with smsller samples.
